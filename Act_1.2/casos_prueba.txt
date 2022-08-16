@@ -1,0 +1,111 @@
+/***********************************************************
+ *                      ITESM Querétaro                    *
+ *                          TC2038                         *
+ *          Análisis y Diseño de Algoritmos Avanzados      *
+ *                       Actividad 1.2                     *
+ *                        15/08/2022                       *
+ *           Olivia Araceli Morales Quezada A10707371      *
+ *           Cristian Leilael Rico Espinosa A01707023      *
+ ***********************************************************/
+
+ **  **  **  **  **  **  **  **  **  **  **  **  **  **  **  **  **  **
+                            Casos de prueba
+ **  **  **  **  **  **  **  **  **  **  **  **  **  **  **  **  **  **
+
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----
+Después de ejecutar el código, introducir los siguiente
+
+Ingresa la cantidad total de números que quieres ordenar:       
+6
+
+Ingresa los 6 números a ordenar: 
+10
+105
+1
+4
+7
+1000
+
+El resultado debe de ser: 1000 105 10 7 4 1
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----
+
+
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----
+Después de ejecutar el código, introducir los siguiente
+
+Ingresa la cantidad total de numeros que quieres ordenar:
+10
+Ingresa los 10 numeros a ordenar: 
+99
+45
+1  
+5656 
+4
+32
+73
+5
+4 
+6
+
+El resultado debe de ser: 5656 99 73 45 32 6 5 4 4 1
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----
+
+
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----
+Después de ejecutar el código, introducir los siguiente
+
+Ingresa la cantidad total de numeros que quieres ordenar:
+25
+Ingresa los 25 numeros a ordenar: 
+5
+5
+5
+109
+999
+666
+420
+12
+16
+724
+3  
+1
+1500
+753
+651 
+513 
+78
+583
+123
+321
+741
+147
+963
+369
+852
+
+El resultado debe de ser: 1500 999 963 852 753 741 724 666 651 583 513 420 369 321 147 123 109 78 16 12 5 5 5 3 1
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----
+
+
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----
+Después de ejecutar el código, introducir los siguiente
+
+Ingresa la cantidad total de numeros que quieres ordenar:
+13
+Ingresa los 13 numeros a ordenar:
+-41
+1
+3
+54
+-7
+1
+6
+78
+10
+65
+56
+36
+63
+
+El resultado debe de ser: 78 65 63 56 54 36 10 6 3 1 1 -7 -41
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----

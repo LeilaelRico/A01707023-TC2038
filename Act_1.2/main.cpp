@@ -99,7 +99,7 @@ void mergeSort(double a[], int size) {
   cout << "\nSus numeros ordenados de mayor a menor: \n";
 
   for (int i = 0; i < size; i++) {
-    cout << a[i] << endl;
+    cout << a[i] << " ";
   }
 }
 
@@ -111,7 +111,7 @@ int main() {
   cout
       << "Implementacion de la tecnica de programacion 'divide y venceras'\n\n";
 
-  cout << "Ingresa la cantidad total de  numeros que quieres ordenar: \n";
+  cout << "Ingresa la cantidad total de numeros que quieres ordenar: \n";
   cin >> numTotal;
 
   cout << "Ingresa los " << numTotal << " numeros a ordenar: \n";
