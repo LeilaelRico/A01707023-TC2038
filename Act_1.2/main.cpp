@@ -3,13 +3,30 @@
  *                          TC2038                         *
  *          Análisis y Diseño de Algoritmos Avanzados      *
  *                       Actividad 1.2                     *
- *              Olivia Araceli Morales Quezada             *
- *              Cristian Leilael Rico Espinosa             *
+ *                        15/08/2022                       *
+ *           Olivia Araceli Morales Quezada A10707371      *
+ *           Cristian Leilael Rico Espinosa A01707023      *
+ ***********************************************************/
+
+/***********************************************************
+ * Implementación del algoritmo MergeSort utilizando la    *
+ * técnica "Divide y Vencerás".                            *
  ***********************************************************/
 
 #include <iostream>
 
 using namespace std;
+
+/************************************************************
+*  La función mergeArray se encarga de ir recorriendo el    *
+*  arreglo de números dados por el usuario                  *
+*  para después fusionarlos de forma ordenada.              *
+*  Consta de 3 variables de tipo entero que serán           *
+*  utilizadas para representar el posicionamiento del       *
+*  recorrido, siendo "i" la posisción actual, "j" la        *
+*  aquella que determinará el lugar donde el arreglo debe   *
+*  partirse y "k" la posición final del arreglo.            *
+************************************************************/
 
 void mergeArray(double arr[], double arrAux[], int low, int mid, int high) {
 
@@ -20,7 +37,7 @@ void mergeArray(double arr[], double arrAux[], int low, int mid, int high) {
   k = low;
 
   while (i <= mid && j <= high) {
-    if (arr[i] < arr[j]) {
+    if (arr[i] > arr[j]) {
       arrAux[k] = arr[i];
       i++;
     } else {
@@ -43,6 +60,15 @@ void mergeArray(double arr[], double arrAux[], int low, int mid, int high) {
   }
 }
 
+/*************************************************************
+*  La función mergeSplit separa a la mitad el arreglo,       *
+*  y se apoya en el método mergeArray para juntarlos,        *
+*  esto se realiza de manera recursiva.                      *
+*  Recibe como parámetros el arreglo a ordenar, su           *
+*  inicio y final.                                           *
+*              No regresa ningun parámetro.                  *
+*************************************************************/
+
 void mergeSplit(double arr[], int low, int high) {
   int mid;
 
@@ -57,10 +83,20 @@ void mergeSplit(double arr[], int low, int high) {
   mergeArray(arr, arrAux, low, mid, high);
 }
 
+/************************************************************
+ *  La función mergeSort es la función principal de este    *
+ *  programa; esta recibe los datos iniciales del usuario   *
+ *  para después pasárselos en forma de parámetros a        *
+ *  mergeSplit.                                             *
+ *  Una vez que el arreglo es modificado por las dos        *
+ *  funciones anteriores, esta función imprime en consola   *
+ *  el arreglo ordenado.                                    *
+ ************************************************************/
+
 void mergeSort(double a[], int size) {
   mergeSplit(a, 0, size - 1);
 
-  cout << "\nSus numeros ordenados: \n";
+  cout << "\nSus numeros ordenados de mayor a menor: \n";
 
   for (int i = 0; i < size; i++) {
     cout << a[i] << endl;
