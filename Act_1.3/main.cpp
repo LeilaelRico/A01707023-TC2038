@@ -9,7 +9,7 @@
  ***********************************************************/
 
 /***********************************************************
- * Implementación del Programación Dinámica y Algoritmos   *
+ * Implementación de Programación Dinámica y Algoritmos    *
  * Avaros.                                                 *
  ***********************************************************/
 
@@ -38,7 +38,6 @@ int coinChange(vector<int> coins, int amount)
 			amount = amount - coins[i];
 			monCambio.push_back(coins[i]);
 			minimum++;
-			// cout << "Monedas: " << monCambio[i] << endl;
 		}
 	}
 
