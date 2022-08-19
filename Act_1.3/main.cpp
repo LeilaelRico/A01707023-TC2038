@@ -16,7 +16,71 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <cmath>
+#include <limits.h>
 using namespace std;
+
+/***********************************************************
+ * 					Programación Dinámica                  *
+ ***********************************************************/
+
+/************************************************************
+*  Su complejidad es de O(n*m).                             *
+*  Encuentra el número mínimo de monedas para regresar      *
+*  como cambio; para esto, utiliza los valores que se       *
+*  se guardan en el vector monCambio como forma de          *
+*  "Memorization".                                          *
+*  La función termina imprimiendo el valor de las           *
+*  monedas a dar como cambio así como el total de estas.    *
+************************************************************/
+
+
+int dp_coinChange(vector<int> coins, int amount)
+{
+	int auxAmount = amount;
+	int minimum = 0;
+	vector<int> monCambio;
+	vector<int> denoCambio;
+	monCambio.push_back(0);
+	denoCambio.push_back(0);
+	for (int m = 1; m <= amount; m++)
+	{
+		monCambio.push_back(m);
+		denoCambio.push_back(m);
+		for (int i = 0; i < coins.size(); i++)
+		{
+			if (m >= coins[i])
+			{
+				minimum = monCambio[m - coins[i]] + 1;
+				if (minimum < monCambio[m])
+				{
+					monCambio[m] = minimum;
+					denoCambio[m] = coins[i];
+				}
+			}
+		}
+	}
+	while (auxAmount > 0)
+	{
+		cout << "DP -> Moneda: " << denoCambio[auxAmount] << "\n";
+		auxAmount -= denoCambio[auxAmount];
+	}
+	return monCambio[amount];
+}
+
+/***********************************************************
+ * 					  Algoritmo Avaro                      *
+ ***********************************************************/
+
+/************************************************************
+*  Su complejidad es de O(nlog(n)).                         *
+*  Encuentra el número mínimo de monedas para regresar      *
+*  como cambio; para esto, comienza seleccionando las       *
+*  monedas con mayor denominación hasta que ya              *
+*  no le es posible.                                        *    
+*  La función termina imprimiendo el valor de las           *
+*  monedas a dar como cambio así como el total de estas.    *
+************************************************************/
 
 bool compare(int i, int j)
 {
@@ -43,11 +107,12 @@ int coinChange(vector<int> coins, int amount)
 
 	for (int i = 0; i < minimum; i++)
 	{
-		cout << "Moneda " << i+1 << ": " << monCambio[i] << "\n";
+		cout << "GREEDY -> Moneda: " << monCambio[i] << "\n";
 	}
 
 	return minimum;
 }
+
 
 int main()
 {
@@ -80,6 +145,18 @@ int main()
 
 	cambio = pago - precioProducto;
 
+	// Algoritmo Avaro
+
+	cout << endl;
+	cout << "===================================================================="  << endl;
+
 	resultado = coinChange(denominaciones, cambio);
-	cout << "Total de monedas: " << resultado << endl;
+	cout << "GREEDY -> Total de monedas: " << resultado << endl;
+
+	// Programación Dinámica
+
+	cout << endl;
+	cout << "===================================================================="  << endl;
+
+	cout << "DP -> Total de Monedas: " << dp_coinChange(denominaciones, cambio) << endl;
 }
