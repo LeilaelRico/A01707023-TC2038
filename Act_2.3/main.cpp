@@ -21,7 +21,7 @@ using namespace std;
 
 vector<string> vec;
 vector<string> vec_aux;
-// O(nlogn)
+// O(n^2)
 int main() {
   string word;
 
@@ -32,7 +32,8 @@ int main() {
   cin >> word;
   int count = 0;
 
-  // O(n)
+  /* La función descompone el vector en todos los substrings */
+  // Complejidad: O(n)
   for (int i = 0; i < word.length(); i++) {
     vec.push_back(word.substr(count, word.length()));
     count++;
@@ -40,10 +41,14 @@ int main() {
 
   vec_aux = vec;
 
-  // O(nLogN)
+  /* Con la función sort, el arreglo pasa a ordenarse de forma alfabética */
+  // Complejidad: O(nLogN)
   sort(vec_aux.begin(), vec_aux.end());
 
-  // O(n)
+  /* Con ayuda de un loop for anidado, se imprime el vector de forma alfabética
+     no sin antes imprimir el índice que indica en qué posición el sufijo se
+     descompuso. */
+  // Complejidad: O(n^2)
   for (int i = 0; i < word.length(); i++) {
     for (int j = 0; j < vec.size(); j++) {
 
@@ -52,6 +57,8 @@ int main() {
       }
     }
   }
+
+  // Complejidad Global O(n^2).
 
   return 0;
 }
