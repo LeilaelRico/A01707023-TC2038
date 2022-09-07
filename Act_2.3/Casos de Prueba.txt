@@ -1,0 +1,84 @@
+/***********************************************************
+ *                      ITESM Querétaro                    *
+ *                          TC2038                         *
+ *          Análisis y Diseño de Algoritmos Avanzados      *
+ *           Olivia Araceli Morales Quezada A10707371      *
+ *           Cristian Leilael Rico Espinosa A01707023      *
+ ***********************************************************/
+
+ **  **  **  **  **  **  **  **  **  **  **  **  **  **  **  **  **  **
+                            Casos de prueba
+ **  **  **  **  **  **  **  **  **  **  **  **  **  **  **  **  **  **
+
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----
+
+Ingrese la palabra a utilizar: banana
+
+El programa debe regresar:
+
+5: a
+3: ana
+1: anana
+0: banana
+4: na
+2: nana
+
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----
+
+Ingrese la palabra a utilizar: certero
+
+El programa debe regresar:
+
+0: certero
+4: ero
+1: ertero
+6: o
+5: ro
+2: rtero
+3: tero
+
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----
+
+Ingrese la palabra a utilizar: mariposa
+
+El programa debe regresar:
+
+7: a
+1: ariposa
+3: iposa
+0: mariposa
+5: osa
+4: posa
+2: riposa
+6: sa
+
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----
+
+Ingrese la palabra a utilizar: Esternocleidomastoideo
+
+El programa debe regresar:
+
+0: Esternocleidomastoideo
+14: astoideo
+7: cleidomastoideo
+19: deo
+11: domastoideo
+9: eidomastoideo
+20: eo
+3: ernocleidomastoideo
+18: ideo
+10: idomastoideo
+8: leidomastoideo
+13: mastoideo
+5: nocleidomastoideo
+21: o
+6: ocleidomastoideo
+17: oideo
+12: omastoideo
+4: rnocleidomastoideo
+1: sternocleidomastoideo
+15: stoideo
+2: ternocleidomastoideo
+16: toideo
+
+=====-----=====-----=====-----=====-----=====-----=====-----=====-----
