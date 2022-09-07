@@ -31,6 +31,7 @@ int main() {
   cout << "Ingrese la palabra a utilizar: ";
   cin >> word;
   int count = 0;
+  cout << endl;
 
   /* La función descompone el vector en todos los substrings */
   // Complejidad: O(n)
