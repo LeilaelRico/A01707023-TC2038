@@ -19,47 +19,60 @@
 
 using namespace std;
 
-vector<string> vec;
-vector<string> vec_aux;
-// O(n^2)
-int main() {
-  string word;
-
-  cout << "---------------------- Actividad 2.3 ----------------------\n";
-	cout << "Implementacion de Suffix Array\n\n";
-
-  cout << "Ingrese la palabra a utilizar: ";
-  cin >> word;
+/* La función descompone el vector en todos los substrings */
+// Complejidad: O(n)
+vector<string> allSuffix(string w, vector<string> mainVec) {
   int count = 0;
-  cout << endl;
 
-  /* La función descompone el vector en todos los substrings */
-  // Complejidad: O(n)
-  for (int i = 0; i < word.length(); i++) {
-    vec.push_back(word.substr(count, word.length()));
+  for (int i = 0; i < w.length(); i++) {
+    mainVec.push_back(w.substr(count, w.length()));
     count++;
   }
 
-  vec_aux = vec;
+  return mainVec;
+}
+/* Con ayuda de un loop for anidado, se imprime el vector de forma alfabética
+   no sin antes imprimir el índice que indica en qué posición el sufijo se
+   descompuso. */
+// Complejidad: O(n^2)
+
+void printSuffix(string w, vector<string> mainVec) {
+
+  vector<string> auxVec;
+
+  auxVec = mainVec;
 
   /* Con la función sort, el arreglo pasa a ordenarse de forma alfabética */
   // Complejidad: O(nLogN)
-  sort(vec_aux.begin(), vec_aux.end());
+  sort(auxVec.begin(), auxVec.end());
 
-  /* Con ayuda de un loop for anidado, se imprime el vector de forma alfabética
-     no sin antes imprimir el índice que indica en qué posición el sufijo se
-     descompuso. */
-  // Complejidad: O(n^2)
-  for (int i = 0; i < word.length(); i++) {
-    for (int j = 0; j < vec.size(); j++) {
+  for (int i = 0; i < w.length(); i++) {
+    for (int j = 0; j < mainVec.size(); j++) {
 
-      if (vec_aux[i] == vec[j]) {
-        cout << j << ": " << vec[j] << endl;
+      if (auxVec[i] == mainVec[j]) {
+        cout << j << ": " << mainVec[j] << endl;
       }
     }
   }
+}
 
-  // Complejidad Global O(n^2).
+int main() {
+  vector<string> vec;
+  vector<string> vec_aux;
+  string word;
+
+  cout << "---------------------- Actividad 2.3 ----------------------\n";
+  cout << "Implementacion de Suffix Array\n\n";
+
+  cout << "Ingrese la palabra a utilizar: ";
+  cin >> word;
+  cout << endl;
+
+  vec_aux = allSuffix(word, vec);
+
+  printSuffix(word, vec_aux);
+
+  // Complejidad global de O(n^2).
 
   return 0;
 }
